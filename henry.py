@@ -7,6 +7,7 @@ import os
 from os import path
 import datetime
 import calendar
+import htmlmin
 
 
 class color:
@@ -220,6 +221,7 @@ while os.path.exists(dir + mmddyyyy + '/articles/' + str(article_num) + ".txt"):
 content = content.replace("%Articles", all_articles_text)
 content = content.replace("\n", "")
 outfile = open(dir + mmddyyyy + '/index.mjml', 'w+')
+content = htmlmin.minify(content, remove_empty_space=True)
 outfile.write(content)
 outfile.close()
 print(
