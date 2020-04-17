@@ -98,6 +98,7 @@ input("Press" + color.BOLD + " enter " + color.END + "to continue")
 clear()
 
 mmddyyyy = "{0:0=2d}".format(int(mm)) + "{0:0=2d}".format(int(dd)) + yyyy
+yyyymmdd =  yyyy + "{0:0=2d}".format(int(mm)) + "{0:0=2d}".format(int(dd))
 
 if not os.path.exists(dir + mmddyyyy):
     print(
@@ -145,6 +146,7 @@ clear()
 
 print(
         "Off the Record for " + color.BOLD + weekday_text + ", " + month_text + " " + dd + ", " + yyyy + color.END + ".\n")
+content = content.replace("%YYYYMMDD", yyyymmdd)
 content = content.replace("%Month", month_text)
 content = content.replace("%DD", dd)
 content = content.replace("%YYYY", yyyy)

@@ -24,7 +24,7 @@
         <!-- BODY CONTENT -->
         <mj-section full-width="full-width" background-color="#02174c" padding-bottom="0">
             <mj-column width="100%">
-                <mj-image src="https://graphics.thehr.org/newsletter/offtherecord_dark.png" alt="" align="center"
+                <mj-image src="https://graphics.thehr.org/newsletter/spring_2020_header.png" alt="" align="center"
                           width="400px"/>
                 <mj-text color="#ffffff" font-weight="bold" align="center" text-transform="uppercase" font-size="16px"
                          letter-spacing="1px" padding-top="30px">
@@ -62,10 +62,10 @@
                                 </mj-social-element>
                             </mj-social>
                             <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
-                                <a href="https://newsletter.thehr.org/20190429/index.html">View this email in your browser</a>
+                                <a href="https://newsletter.thehr.org/%YYYYMMDD/index.html">View this email in your browser</a>
                             </mj-text>
                             <mj-text color="#445566" font-size="11px" align="center" line-height="16px">
-                                Copyright © 2019 The Hotchkiss Record, All rights reserved. You are receiving this email because you
+                                Copyright © %YYYY The Hotchkiss Record, All rights reserved. You are receiving this email because you
                                 are a member of the Hotchkiss community.
                             </mj-text>
                             <mj-text color="#445566" font-size="11px" align="center" line-height="16px">
