@@ -119,6 +119,11 @@ if not os.path.exists(dir + mmddyyyy + '/editorial.txt'):
     editorial.write("Input the editorial message on the next line: \n")
     editorial.close()
 
+if not os.path.exists(dir + mmddyyyy + '/errata.txt'):
+    editorial = open(dir + mmddyyyy + "/errata.txt", "x")
+    editorial.write("Input errata on the next line only (styled with HTML, one line): \n")
+    editorial.close()
+
 if not os.path.exists(dir + mmddyyyy + '/articles'):
     os.makedirs(dir + mmddyyyy + '/articles')
     temp_art = open(dir + mmddyyyy + "/articles/1.txt", "x")
@@ -173,6 +178,18 @@ except IndexError:
 
 print(color.BOLD + color.UNDERLINE + "Editorial" + color.END + ": " + editorial_text)
 content = content.replace("%Editorial", editorial_text)
+
+try:
+    errata = open(dir + mmddyyyy + "/errata.txt")
+    errata_text = errata.readlines()[1]
+    errata.close()
+    errata_text = '<mj-text color="#637381" font-size="16px">' + errata_text + '</mj-text>'
+except IndexError:
+    print("It seems like the errata file is empty. ")
+    errata_text = ""
+
+print(color.BOLD + color.UNDERLINE + "Errata" + color.END + ": " + errata_text)
+content = content.replace("%Errata", errata_text)
 
 article_num = 1
 all_articles_text = ""
