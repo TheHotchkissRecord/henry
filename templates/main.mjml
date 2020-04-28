@@ -67,7 +67,7 @@
             <a href="https://newsletter.thehr.org/%YYYYMMDD/index.html">View this email in your browser</a>
           </mj-text>
           <mj-text color="#445566" font-size="11px" align="center" line-height="16px">
-            Copyright © %YYYY The Hotchkiss Record, All rights reserved. You are receiving this email because you are a member of the Hotchkiss community.
+            Copyright © %YYYY The Hotchkiss Record, All rights reserved. You are receiving this email because you are a member of the Hotchkiss community, or you because signed up on our website.
           </mj-text>
           <mj-text color="#445566" font-size="11px" align="center" line-height="16px">
             <b>Our mailing address is:</b><br/> The Hotchkiss Record <br/> 11 Interlaken Rd <br/> Lakeville, CT 06039-2141
