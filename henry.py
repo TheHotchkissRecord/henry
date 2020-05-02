@@ -7,7 +7,7 @@ import os
 from os import path
 import datetime
 import calendar
-import htmlmin
+#import htmlmin
 
 
 class color:
@@ -39,19 +39,22 @@ def clear():
 
 print("\x1b[8;80;80t")
 
+# Get information about the working directory
 clear()
 dir = ""
+dir = input(color.BOLD + color.UNDERLINE + "Config\n" + color.END + "Henry needs some information about the directory you want to work in, please drag and drop the folder that Henry is located in here: ")
+dir = dir.replace(" ", "") + "/"
+
+# Gets information about the template directory
 while True:
-    dir = input(
-        color.BOLD + color.UNDERLINE + "Config\n" + color.END + "Henry needs some information about the directory you want to work in, please drag and drop the folder that Henry is located in here: ")
-    dir = dir.replace(" ", "") + "/"
-    if not (os.path.exists(dir + "templates/main.mjml") and os.path.exists(dir + "templates/article.mjml")):
+    templatedir = os.path.dirname(__file__)
+    if not (os.path.exists(os.path.join(templatedir, "templates/main.mjml")) and os.path.exists(os.path.join(templatedir, "templates/article.mjml"))):
         print(
-                "\nError! Henry did not find the necessary template files in your directory. Please ensure that " + color.DARKCYAN + "templates/main.mjml" + color.END + " and " + color.DARKCYAN + "templates/article.mjml" + color.END + " are in your directory. \n")
+                "\nError! Henry did not find the necessary template files in the henry directory. Please ensure that " + color.DARKCYAN + "templates/main.mjml" + color.END + " and " + color.DARKCYAN + "templates/article.mjml" + color.END + " are in your directory. \n")
     else:
         break
 
-f = open(dir + "templates/main.mjml")
+f = open(os.path.join(templatedir, "templates/main.mjml"))
 content = f.read()
 f.close()
 
@@ -59,6 +62,7 @@ clear()
 print(
         color.BOLD + "Henry" + color.END + " is named after " + color.BOLD + "Henry Luce" + color.END + "(if you don't know who he is, search him up!). \nIt is a small Python script that helps create \'Off the Record\' Newsletters.\n")
 
+# Get information about the date
 print("Let's start with the basics, Henry needs to know the day that this will be sent out. ")
 
 while True:
@@ -100,6 +104,7 @@ clear()
 mmddyyyy = "{0:0=2d}".format(int(mm)) + "{0:0=2d}".format(int(dd)) + yyyy
 yyyymmdd =  yyyy + "{0:0=2d}".format(int(mm)) + "{0:0=2d}".format(int(dd))
 
+# Create folders and files if they do not exist yet
 if not os.path.exists(dir + mmddyyyy):
     print(
             "It doesn't look like a folder for articles exists yet, Henry will create them for you. You will find a folder titled \"" + mmddyyyy +
@@ -220,7 +225,7 @@ while os.path.exists(dir + mmddyyyy + '/articles/' + str(article_num) + ".txt"):
                 color.BOLD + "*" + color.END + " No proper thumbnail image detected for " + color.BOLD + color.UNDERLINE + "article " + str(
             article_num) + color.END + ", Henry will not include an image for it. ")
     article.close()
-    article_f = open(dir + "templates/article.mjml")
+    article_f = open(os.path.join(templatedir, "templates/article.mjml"))
     article_text = article_f.read()
     article_f.close()
 
@@ -238,9 +243,9 @@ while os.path.exists(dir + mmddyyyy + '/articles/' + str(article_num) + ".txt"):
     article_num += 1
 
 content = content.replace("%Articles", all_articles_text)
-content = content.replace("\n", "")
+#content = content.replace("\n", "")
 outfile = open(dir + mmddyyyy + '/index.mjml', 'w+')
-content = htmlmin.minify(content, remove_empty_space=True)
+#content = htmlmin.minify(content, remove_empty_space=True)
 outfile.write(content)
 outfile.close()
 print(
