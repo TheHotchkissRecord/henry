@@ -8,6 +8,9 @@
 <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
   <mj-column width="100%">
     <mj-text color="#637381" font-size="12px" align=right padding-right="5px">
+      %Credit
+    </mj-text>
+    <mj-text color="#637381" font-size="12px" align=left padding-left="5px">
       <i>%Caption</i>
     </mj-text>
     <mj-text color="#212b35" font-weight="bold" font-size="20px">

@@ -150,6 +150,7 @@ if not os.path.exists(dir + mmddyyyy + '/articles'):
         temp_art.write("Byline (FirstName LastName \'19): \n\n\n")
         temp_art.write("Content preview: \n\n\n")
         temp_art.write("If there is a thumbnail image, give it a caption. Otherwise, leave it blank: \n\n\n")
+        temp_art.write("If there is a thumbnail image, give it a credit or an attribution. Otherwise, leave it blank: \n\n\n")
         temp_art.write("If there is a thumbnail image, put the link on the next line. Otherwise, leave it blank. \n")
         temp_art.close()
 
@@ -225,12 +226,14 @@ while os.path.exists(dir + mmddyyyy + '/articles/' + str(article_num) + ".txt"):
     byline = lines[7]
     preview = lines[10]
     caption = lines[13]
+    credit = lines[16]
     is_thumbnail = True
     thumbnail = ""
     try:
-        thumbnail = lines[16]
+        thumbnail = lines[19]
     except IndexError:
         caption = ""
+        credit = ""
 
     if not re.match(link_regex, thumbnail):
         is_thumbnail = False
@@ -248,6 +251,7 @@ while os.path.exists(dir + mmddyyyy + '/articles/' + str(article_num) + ".txt"):
                                             "<mj-image src=\"%Thumbnail\" width=\"600px\" alt=\"\" padding=\"0\" href=\"%Link\" />")
         article_text = article_text.replace("%Thumbnail", thumbnail)
     article_text = article_text.replace("%Caption", caption)
+    article_text = article_text.replace("%Credit", credit)
     article_text = article_text.replace("%Title", title)
     article_text = article_text.replace("%Author", byline)
     article_text = article_text.replace("%Preview", preview)
