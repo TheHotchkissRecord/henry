@@ -95,8 +95,20 @@ date = datetime.date(int(yyyy), int(mm), int(dd))
 weekday = datetime.date(int(yyyy), int(mm), int(dd)).weekday()
 weekday_text = calendar.day_name[weekday]
 month_text = calendar.month_name[int(mm)]
+
+# Get the number of articles in the newsletter
+while True:
+    num_articles = input(
+        "How many articles are in the newsletter: ")
+    if not num_articles.isdigit():
+        print("Error! Please enter a valid positive number")
+    else:
+        break
+num_articles = int(num_articles)
+
 print(
-        "\nGreat! I've got the date down as " + color.BOLD + weekday_text + ", " + month_text + " " + dd + ", " + yyyy + color.END + ". ")
+        "\nGreat! I've got the date down as " + color.BOLD + weekday_text + ", " + month_text + " " + dd + ", " + yyyy + color.END + ". There are " + str(num_articles) + " articles in this newsletter.")
+
 input("Press" + color.BOLD + " enter " + color.END + "to continue")
 
 clear()
@@ -131,14 +143,15 @@ if not os.path.exists(dir + mmddyyyy + '/errata.txt'):
 
 if not os.path.exists(dir + mmddyyyy + '/articles'):
     os.makedirs(dir + mmddyyyy + '/articles')
-    temp_art = open(dir + mmddyyyy + "/articles/1.txt", "x")
-    temp_art.write("Article title (on next line): \n\n\n")
-    temp_art.write("What is the link of the article (next line): \n\n\n")
-    temp_art.write("Byline (FirstName LastName \'19): \n\n\n")
-    temp_art.write("Content preview: \n\n\n")
-    temp_art.write("If there is a thumbnail image, give it a caption. Otherwise, leave it blank: \n\n\n")
-    temp_art.write("If there is a thumbnail image, put the link on the next line. Otherwise, leave it blank. \n")
-    temp_art.close()
+    for i in range(1, num_articles + 1):
+        temp_art = open(dir + mmddyyyy + "/articles/" + str(i) + ".txt", "x")
+        temp_art.write("Article title (on next line): \n\n\n")
+        temp_art.write("What is the link of the article (next line): \n\n\n")
+        temp_art.write("Byline (FirstName LastName \'19): \n\n\n")
+        temp_art.write("Content preview: \n\n\n")
+        temp_art.write("If there is a thumbnail image, give it a caption. Otherwise, leave it blank: \n\n\n")
+        temp_art.write("If there is a thumbnail image, put the link on the next line. Otherwise, leave it blank. \n")
+        temp_art.close()
 
 print("\nKeep in mind that Henry expects the files to be in the following format: \n" + color.DARKCYAN +
       " ├── " + mmddyyyy + "/" + color.BOLD + "info.txt\n" + color.END + color.DARKCYAN +
