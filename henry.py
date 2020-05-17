@@ -96,18 +96,8 @@ weekday = datetime.date(int(yyyy), int(mm), int(dd)).weekday()
 weekday_text = calendar.day_name[weekday]
 month_text = calendar.month_name[int(mm)]
 
-# Get the number of articles in the newsletter
-while True:
-    num_articles = input(
-        "How many articles are in the newsletter: ")
-    if not num_articles.isdigit():
-        print("Error! Please enter a valid positive number")
-    else:
-        break
-num_articles = int(num_articles)
-
 print(
-        "\nGreat! I've got the date down as " + color.BOLD + weekday_text + ", " + month_text + " " + dd + ", " + yyyy + color.END + ". There are " + str(num_articles) + " articles in this newsletter.")
+        "\nGreat! I've got the date down as " + color.BOLD + weekday_text + ", " + month_text + " " + dd + ", " + yyyy + color.END + ".")
 
 input("Press" + color.BOLD + " enter " + color.END + "to continue")
 
@@ -142,6 +132,15 @@ if not os.path.exists(dir + mmddyyyy + '/errata.txt'):
     editorial.close()
 
 if not os.path.exists(dir + mmddyyyy + '/articles'):
+    # Get the number of articles in the newsletter
+    while True:
+        num_articles = input(
+            "No articles folder was found. How many articles are in the newsletter: ")
+        if not num_articles.isdigit():
+            print("Error! Please enter a valid positive number.")
+        else:
+            break
+    num_articles = int(num_articles)
     os.makedirs(dir + mmddyyyy + '/articles')
     for i in range(1, num_articles + 1):
         temp_art = open(dir + mmddyyyy + "/articles/" + str(i) + ".txt", "x")
