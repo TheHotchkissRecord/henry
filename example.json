@@ -1,0 +1,63 @@
+{
+    "date": {
+      "year": "2020",
+      "month": "05",
+      "day": "28"
+      },
+    "intro": "asdfasdf",
+    "emailPreview": "asdfasdf",
+    "errata": "asdfasdf",
+    "articleOrder": [1, 2, 3, 4, 5],
+    "articles": [
+      {
+        "id": 1,
+        "title": "asdfasdf",
+        "articleLink": "asdfasdf",
+        "byline": "asdfasdf",
+        "contentPreview": "asdfasdf",
+        "thumbnailLink": "asdfasdf",
+        "thumbnailCaption": "asdfasdf",
+        "thumbnailCredit": "asdfasdf"
+      },
+      {
+        "id": 2,
+        "title": "asdfasdf",
+        "articleLink": "asdfasdf",
+        "byline": "asdfasdf",
+        "contentPreview": "asdfasdf",
+        "thumbnailLink": "asdfasdf",
+        "thumbnailCaption": "asdfasdf",
+        "thumbnailCredit": "asdfasdf"
+      },
+      {
+        "id": 3,
+        "title": "asdfasdf",
+        "articleLink": "asdfasdf",
+        "byline": "asdfasdf",
+        "contentPreview": "asdfasdf",
+        "thumbnailLink": "asdfasdf",
+        "thumbnailCaption": "asdfasdf",
+        "thumbnailCredit": "asdfasdf"
+      },
+      {
+        "id": 4,
+        "title": "asdfasdf",
+        "articleLink": "asdfasdf",
+        "byline": "asdfasdf",
+        "contentPreview": "asdfasdf",
+        "thumbnailLink": "asdfasdf",
+        "thumbnailCaption": "asdfasdf",
+        "thumbnailCredit": "asdfasdf"
+      },
+      {
+        "id": 5,
+        "title": "asdfasdf",
+        "articleLink": "asdfasdf",
+        "byline": "asdfasdf",
+        "contentPreview": "asdfasdf",
+        "thumbnailLink": "asdfasdf",
+        "thumbnailCaption": "asdfasdf",
+        "thumbnailCredit": "asdfasdf"
+      },
+    ]
+}

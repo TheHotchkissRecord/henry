@@ -1,4 +1,4 @@
-#Objectives
+# Objectives
 - Store newsletter as json file
 - each article is assigned an ID
   - order of articles is stored as a sequential list of IDs
