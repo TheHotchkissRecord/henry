@@ -12,6 +12,22 @@ function Article() {
   this.thumbnailLink = "";
   this.thumbnailCaption = "";
   this.thumbnailCredit = "";
+
+  this.toMJML = function() {
+    mjml = ARTICLE_TEXT;
+
+    // some of this stuff should not be included if it is empty
+    // should also check if links are valid - maybe that should be a separate function though
+    mjml = mjml.replace("%Thumbnail", this.thumbnailLink);
+    mjml = mjml.replace("%Caption", this.thumbnailCaption);
+    mjml = mjml.replace("%Credit", this.thumbnailCredit);
+    mjml = mjml.replace("%Title", this.title);
+    mjml = mjml.replace("%Author", this.byline);
+    mjml = mjml.replace("%Preview", this.contentPreview);
+    mjml = mjml.replace("%Link", this.articleLink);
+
+    return mjml;
+  }
 }
 
 function Newsletter() {
@@ -49,13 +65,29 @@ function Newsletter() {
       throw "Article ID not found in either articleOrder or articles"
     }
   }
+
+  this.toMJML = function() {
+    articlesMJML = "";
+    for (id of this.articleOrder) {
+      articlesMJML = articlesMJML + this.articles.find(element => element.id == id).toMJML();
+    }
+    mjml = MAIN_TEXT;
+    // might not work in Internet Explorer
+    mjml = mjml.replace("%YYYYMMDD", this.date.getFullYear().toString() + (this.date.getMonth + 1).toString().padStart(2, "0") + this.date.getDate().toString().padStart(2, "0"));
+    mjml = mjml.replace("%Month", this.date.toLocaleString('default', { month: 'long' }));
+    mjml = mjml.replace("%DD", this.date.getDate().toString().padStart(2, "0"))
+    mjml = mjml.replace("%YYYY", this.date.getFullYear());
+    mjml = mjml.replace("%Weekday", this.date.toLocaleDateString('default', { weekday: 'long' }))
+    mjml = mjml.replace("%Description", this.emailPreview);
+    mjml = mjml.replace("%Editorial", this.intro);
+    mjml = mjml.replace("%Errata", this.errata);
+    mjml = mjml.replace("%Articles", articlesMJML);
+
+    return mjml;
+  }
 }
 
-function fromJSON() {
-
-}
-
-function toMJML() {
+function newsletterFromJSON() {
 
 }
 
