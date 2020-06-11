@@ -87,8 +87,30 @@ function Newsletter() {
   }
 }
 
-function newsletterFromJSON() {
+function newsletterFromJSON(jsonData) {
+  obj = JSON.parse(jsonData);
+  news = new Newsletter();
+  news.date = new Date(obj.date);
+  news.intro = obj.intro;
+  news.emailPreview = obj.emailPreview;
+  news.errata = obj.errata;
+  news.articleOrder = obj.articleOrder;
+  news.highestID = obj.highestID;
 
+  for (article of obj.articles) {
+    newArt = new Article();
+    newArt.id = article.id;
+    newArt.title = article.title;
+    newArt.articleLink = article.articleLink;
+    newArt.byline = article.byline;
+    newArt.contentPreview = article.contentPreview;
+    newArt.thumbnailLink = article.thumbnailLink;
+    newArt.thumbnailCaption = article.thumbnailCaption;
+    newArt.thumbnailCredit = article.thumbnailCredit;
+    news.articles.push(newArt);
+  }
+
+  return news;
 }
 
 var news = new Newsletter();

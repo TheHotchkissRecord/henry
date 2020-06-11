@@ -1,13 +1,10 @@
 {
-    "date": {
-      "year": "2020",
-      "month": "05",
-      "day": "28"
-      },
+    "date": "2020-06-10T23:15:30.000Z",
     "intro": "asdfasdf",
     "emailPreview": "asdfasdf",
     "errata": "asdfasdf",
     "articleOrder": [1, 2, 3, 4, 5],
+    "highestID" : 5,
     "articles": [
       {
         "id": 1,
@@ -58,6 +55,6 @@
         "thumbnailLink": "asdfasdf",
         "thumbnailCaption": "asdfasdf",
         "thumbnailCredit": "asdfasdf"
-      },
+      }
     ]
 }
