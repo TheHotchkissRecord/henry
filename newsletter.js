@@ -73,11 +73,11 @@ function Newsletter() {
     }
     mjml = MAIN_TEXT;
     // might not work in Internet Explorer
-    mjml = mjml.replace("%YYYYMMDD", this.date.getFullYear().toString() + (this.date.getMonth + 1).toString().padStart(2, "0") + this.date.getDate().toString().padStart(2, "0"));
-    mjml = mjml.replace("%Month", this.date.toLocaleString('default', { month: 'long' }));
-    mjml = mjml.replace("%DD", this.date.getDate().toString().padStart(2, "0"))
-    mjml = mjml.replace("%YYYY", this.date.getFullYear());
-    mjml = mjml.replace("%Weekday", this.date.toLocaleDateString('default', { weekday: 'long' }))
+    mjml = mjml.replace(/%YYYYMMDD/g, this.date.getFullYear().toString() + (this.date.getMonth() + 1).toString().padStart(2, "0") + this.date.getDate().toString().padStart(2, "0"));
+    mjml = mjml.replace(/%Month/g, this.date.toLocaleString('default', { month: 'long' }));
+    mjml = mjml.replace(/%DD/g, this.date.getDate().toString().padStart(2, "0"))
+    mjml = mjml.replace(/%YYYY/g, this.date.getFullYear());
+    mjml = mjml.replace(/%Weekday/g, this.date.toLocaleDateString('default', { weekday: 'long' }))
     mjml = mjml.replace("%Description", this.emailPreview);
     mjml = mjml.replace("%Editorial", this.intro);
     mjml = mjml.replace("%Errata", this.errata);
