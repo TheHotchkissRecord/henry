@@ -1,0 +1,34 @@
+{
+  "name": "henry",
+  "version": "1.0.0",
+  "description": "*Henry* is named after Henry Luce '16. It is a command-line widget that compiles *Off the Record* newsletters automatically.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify src/main.js -t babelify --outfile bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheHotchkissRecord/henry.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheHotchkissRecord/henry/issues"
+  },
+  "homepage": "https://github.com/TheHotchkissRecord/henry#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "browserify": "^16.5.1"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-dragula": "^1.1.17",
+    "split.js": "^1.6.0"
+  }
+}
