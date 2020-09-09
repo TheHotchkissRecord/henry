@@ -26,6 +26,9 @@
     "browserify": "^16.5.1"
   },
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "dragula": "^3.7.2",
+    "fontsource-roboto": "^2.1.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dragula": "^1.1.17",
