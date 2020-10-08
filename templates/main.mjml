@@ -57,6 +57,13 @@
             <a href="https://thehr.org/corrections">Issue a correction for a previous issue.</a><br/>
             <a href="https://hotchkissrecord.org/errata/">View an up-to-date list of the errors we are currently aware of.</a>
           </mj-text>
+          <mj-text color="#212b35" font-weight="bold" font-size="20px">
+            Contact Us
+          </mj-text>
+          <mj-text color="#445566" font-size="11px" font-weight="bold">
+            Do you have an idea you would like us to cover?
+            <a href="https://hotchkissrecord.org/contact/">Contact us or submit an anonymous tip.</a>
+          </mj-text>
           <mj-social font-size="15px" icon-size="30px" mode="horizontal" padding="0" align="center">
             <mj-social-element name="instagram" href="https://www.instagram.com/hotchkissrecord/" background-color="#A1A0A0">
             </mj-social-element>
