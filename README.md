@@ -1,6 +1,8 @@
 # Henry
 *Henry* is named after Henry Luce '16. It is a command-line widget that compiles *Off the Record* newsletters automatically. 
 
+**UPDATE: Please use the [Henry web app](https://github.com/TheHotchkissRecord/henry-web) now instead of this.**
+
 ## Installation
 Run
 ```shell
@@ -18,7 +20,7 @@ pyinstaller --onefile henry.py
 and the executable file will be in `dist` folder. Drag `henry` into the newsletter folder to use. 
 
 ## Upcoming
-*Henry* is (hopefully) getting a GUI soon. 
+<s>*Henry* is (hopefully) getting a GUI soon.</s> Henry has a [web app port](https://github.com/TheHotchkissRecord/henry-web) now!
 ```
       ___           ___           ___           ___                 
      /__/\         /  /\         /__/\         /  /\          ___   
